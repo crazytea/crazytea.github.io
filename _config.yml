@@ -1,0 +1,108 @@
+lang: zh-TW
+timezone: Asia/Taipei
+
+title: 小黃的繼承車
+tagline: 紀錄開發與工作的23事
+description: >-
+  小黃的個人部落格，記錄開發技術與工作心得。
+
+url: "https://crazytea.github.io"
+baseurl: ""
+
+github:
+  username: crazytea
+
+social:
+  name: 小黃
+  email: ""
+  links:
+    - https://github.com/crazytea
+
+avatar: /assets/img/avatar.jpg
+
+theme_mode: # [light | dark] 留空表示跟隨系統
+
+toc: true
+
+comments:
+  active: ""
+
+assets:
+  self_host:
+    enabled: false
+
+pwa:
+  enabled: true
+  cache:
+    enabled: true
+
+paginate: 10
+
+kramdown:
+  footnote_backlink: "&#8617;&#xfe0e;"
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: true
+      toc: true
+      permalink: /posts/:title/
+  - scope:
+      path: _drafts
+    values:
+      comments: false
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: development
+
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
+  - README.md
+  - LICENSE
+  - "*.config.js"
+  - package*.json
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
+
+theme: jekyll-theme-chirpy
